@@ -116,7 +116,15 @@ def add_view_traces(view_name, flag_col, link_col, link_disp_idx):
             journal = g['journal'].apply(safe_str).tolist()
             
             # Metadata fields
-            meta_title = g['meta_title'].tolist()
+            def short_title(title):
+              if pd.isna(title):
+                return ""
+              words = str(title).split()
+              if len(words) > 10:
+                return " ".join(words[:10]) + "..."
+              return str(title)
+            meta_title = g['meta_title'].apply(short_title).tolist()
+            meta_full_title = g['meta_title'].tolist()
             meta_abstract = g['meta_abstract'].tolist()
             meta_inst = g['meta_inst'].tolist()
             meta_keywords = g['meta_keywords'].tolist()
@@ -192,9 +200,9 @@ def add_view_traces(view_name, flag_col, link_col, link_disp_idx):
                 "showlegend": showlegend,
                 "x": x,
                 "y": y,
-                "text": doi,
+                "text": meta_title,
                 # customdata: [doi_url, year, journal, code_disp, data_disp, title, abstract, inst, keywords, funding, ack, open_access]
-                "customdata": list(map(list, zip(doi_url, year, journal, code_disp_list, data_disp_list, meta_title, meta_abstract, meta_inst, meta_keywords, meta_funding, meta_ack, meta_open_access))),
+                "customdata": list(map(list, zip(doi_url, year, journal, code_disp_list, data_disp_list, meta_full_title, meta_abstract, meta_inst, meta_keywords, meta_funding, meta_ack, meta_open_access))),
                 "hovertemplate": hovertemplate,
                 "hoverlabel": {"bgcolor": "#f3f4f6", "bordercolor": "#d1d5db", "font": {"color": "#111827"}} if flag else {},
                 "marker": marker,
@@ -509,7 +517,24 @@ html = f"""<!doctype html>
         </div>
       </div>
       <div class="footer" style="flex-direction: column; margin-top: auto;">
-        <div><span class="kbd">Circle</span> = No · <span class="kbd">Star</span> = Yes</div>
+        <div>
+          <span class="kbd">How to use?</span>
+        </div>
+
+        <div class="help-popup" id="helpPopup" role="dialog">
+          <div class="help-content">
+            <p>
+              Hello! This is an interactive website for our LLM-based measurement of open science practices in transportation journals.
+              By searching keywords (under beta testing) you can get a sense of the papers on the topic (circles) and which have available code or data (stars).
+              Feedback is welcome! Contact
+              <a href="mailto:junyi.ji@vanderbilt.edu"
+                onclick="navigator.clipboard.writeText('junyi.ji@vanderbilt.edu')">
+                junyi.ji@vanderbilt.edu
+              </a>.
+            </p>
+          </div>
+        </div>
+
         <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--muted);">
             <strong>Citation:</strong>
             <pre style="white-space: pre-wrap; word-wrap: break-word; background: #f3f4f6; padding: 8px; border-radius: 4px; margin-top: 4px; font-family: monospace; font-size: 0.7rem;">@misc{{RERITE2026OTSM,
