@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+  <title>Measuring Open Science Practices in Transportation Research</title>
+
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+    /* Simple citation styling */
+    .cite-note { font-size: 0.95rem; opacity: 0.9; }
+    .how-to-cite { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.12); }
+    pre.bibtex { background: rgba(0,0,0,0.04); padding: 1rem; overflow-x: auto; }
+    sup a { text-decoration: none; }
+  </style>
+
+  <script src="site_libs/clipboard/clipboard.min.js"></script>
+  <script src="site_libs/quarto-html/tabby.min.js"></script>
+  <script src="site_libs/quarto-html/popper.min.js"></script>
+  <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="site_libs/quarto-html/anchor.min.js"></script>
+  <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+  <link href="site_libs/quarto-html/quarto-html-734cb40618f438257b19a1e532635a32.min.css" rel="stylesheet" append-hash="true" data-mode="light">
+  <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html" aria-label="Home">
+        <img src="./images/logo_png.png" alt="RERITE Logo">
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar-nav">
+        <li><a class="nav-link" href="../index.html">Home</a></li>
+        <li><a class="nav-link" href="../about.html">About</a></li>
+        <li><a class="nav-link" href="../team.html">Team</a></li>
+        <li><a class="nav-link" href="../activities.html">Activities</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">Resources</a>
+          <div class="dropdown-menu" role="menu">
+            <div class="dropdown-container">
+              <p class="dropdown-section-label">Collections</p>
+              <a class="dropdown-item" href="../awesome-rerite.html">awesome-rerite</a>
+            </div>
+          </div>
+        </li>
+        <li><a class="nav-link" href="../getinvolved.html">Contribute</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    (function() {
+      const navbar = document.querySelector('.navbar');
+      const toggle = navbar?.querySelector('.navbar-toggle');
+      const navList = navbar?.querySelector('.navbar-nav');
+
+      if (!navbar || !toggle || !navList) return;
+
+      const closeMenu = () => {
+        navbar.classList.remove('navbar--open');
+        toggle.setAttribute('aria-expanded', 'false');
+      };
+
+      toggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = navbar.classList.toggle('navbar--open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!navbar.contains(event.target)) closeMenu();
+      });
+
+      navList.addEventListener('click', (event) => {
+        if (event.target.closest('a')) closeMenu();
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) closeMenu();
+      });
+    })();
+  </script>
+
+  <div class="content-container">
+    <header>
+      <h1>MOST: <u>M<u>easuring <u>O</u>pen <u>S</u>cience Practices in <u>T</u>ransportation Research</h1>
+    </header>
+
+    <main>
+      <h2>Welcome</h2>
+      <p>
+        This website hosts interactive pages for the Measuring Open Science Practices in Transportation Research project<sup>
+          <a href="#cite-most" aria-label="Citation for MOST working paper">[1]</a>
+        </sup>.
+      </p>
+
+      <h2>Available Pages</h2>
+      <ul>
+        <li><a href="explorer.html">Explorer</a> - An interactive page for check the paper with data or code avaiable.</li>
+      </ul>
+
+      <!-- Citation section -->
+      <section class="how-to-cite" aria-labelledby="how-to-cite-title">
+        <h2 id="how-to-cite-title">How to cite</h2>
+        <p class="cite-note" id="cite-most">
+          [1] Ji, J., Lu, R., Belkessa, L., Wang, L., Varotto, S., Dong, Y., Saunier, N., Ameli, M., Macfarlane, G. S., Madadi, B., Wu, C. (2025).
+          <em>Measuring the State of Open Science in Transportation Using Large Language Models</em>. Working paper.
+        </p>
+
+        <details>
+          <summary>Show BibTeX</summary>
+          <pre class="bibtex"><code>@misc{RERITE2026MOST,
+  title  = {Measuring the State of Open Science in Transportation Using Large Language Models},
+  author = {Ji, Junyi and Lu, Ruth and Belkessa, Linda and Wang, Liming and Varotto, Silvia and Dong, Yongqi and Saunier, Nicolas and Ameli, Mostafa and Macfarlane, Gregory S. and Madadi, Bahman and Wu, Cathy},
+  note   = {Working paper},
+  year   = {2025}
+}</code></pre>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; MOST Project 2024 - 2026</p>
+    </footer>
+  </div>
+</body>
+</html>
